@@ -7,9 +7,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <%#= javascript_pack_tag 'hello_react' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'todos' %>
   </head>
 
   <body>
+    <div class="nav-container" id="nav-container">
+      <nav class="nav-bar">
+        <div class="logo">
+          <%= image_tag("note.png", alt: "spiral notepad and pencil icon") %>
+        </div>
+        <div class="session-info">
+          <% if current_user %>
+            <p>Hi, <%= current_user.username %></p>
+            <%= link_to 'Log Out', logout_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Log In', login_path %>
+            <%= link_to 'Sign Up', new_user_path %>
+          <% end  %>
+        </div>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

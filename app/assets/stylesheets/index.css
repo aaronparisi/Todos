@@ -1,0 +1,284 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #90e5ff, #aacaeb);
+  color: #616161;
+}
+
+button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 115px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  max-width: inherit;
+  height: 115px;
+  transition: background 1s ease 0s;
+  position: fixed;
+  top: 0;
+}
+
+.darken .nav-bar {
+  /* background-color: #90e5ff; */
+  background-color: rgb(170, 202, 235);
+  box-shadow: 0px 0px 35px #616161;
+}
+
+.session-info {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.session-info :first-child {
+  margin-right: 20px;
+}
+
+.session-info a:nth-last-of-type(2n) {
+  text-decoration: none;
+  background-color: transparent;
+  color: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.session-info a:nth-last-of-type(2n):hover {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.session-info a:nth-last-of-type(2n+1), #create-account-link {
+  text-decoration: none;
+  background-color: #f5f5f5;
+  color: rgb(129, 159, 191);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.session-info a:nth-last-of-type(2n+1):hover, #create-account-link:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: rgb(129, 159, 191);
+}
+
+.logo {
+  background-color: #338bd8;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+nav img {
+  height: 40px;
+  color: #FFFFFF;
+  filter: invert(100%);
+}
+
+#root {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.todo-lists {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.todo-list-wrapper {
+  min-height: 190px;
+  width: 500px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #CEE3F4;
+  border: 2px solid #B2CBDF;
+  border-radius: 25px;
+  box-shadow: 3px 3px 0px 0px #7dc5f1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.todo-header {
+  text-align: center;
+}
+
+.todo-list {
+  flex: 1;
+}
+
+.todo-list-item {
+  background-color: #FFFFFF;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  color: #8a8a8a;
+  flex: 1;
+  box-shadow: 2px 2px 0px 0px #B2CBDF;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.todo-title {
+  text-align: center;
+}
+
+#todo-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-right: 3px;
+}
+
+#title {
+  margin-right: 5px;
+}
+
+.todo-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.todo-button {
+  margin: 2px 2px;
+  width: 33%;
+}
+
+button, input[type="submit"] {
+  color: #777777;
+  background-color: #f0f0f0;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: 'Nunito', sans-serif;
+  margin: 2px 2px;
+  font-size: 14px;
+}
+
+input[type="text"], input[type="datetime-local"] {
+  border: 1px solid #c0c0c0;
+  padding: 5px 10px;
+  margin: 2px;
+  width: 75%;
+  border-radius: 5px;
+  outline: none;
+  color: #777777;
+}
+
+::placeholder {
+  color: #bbbbbb;
+}
+
+.steps-form {
+  margin-top: 10px;
+}
+
+.steps-list {
+  counter-reset: stepNum;
+}
+
+.steps-list li::before {
+  counter-increment: stepNum;
+  content: counter(stepNum)".";
+}
+
+.steps-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  text-overflow: ellipsis;
+  margin: 10px;
+  padding: 10px 10px;
+  border: 1px solid #d3dce5;
+  border-radius: 5px;
+}
+
+.complete-step {
+  background-color: rgb(200, 252, 200);
+}
+
+
+.incomplete-step {
+  background-color: rgb(255, 212, 212);
+}
+
+.step-info {
+  flex: 3;
+}
+
+.step-buttons {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step-button {
+  padding: 2px;
+  width: 45%;
+}
+
+.step-button-icon {
+  height: 20px;
+}
+
+button:disabled {
+  filter: opacity(40%);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.user-form input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #c0c0c0;
+  width: 100%;
+  margin: 5px 0px;
+  font-size: 20px;
+}
+
+#create-account-link {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 922px) {
+  .todo-lists {
+    flex-direction: column;
+    align-items: center;
+  }
+}
